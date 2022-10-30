@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lottery",
+  "name": "lottery",
+  "description": "Use redemption codes to offer packs to players!.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["someoneice"],
+  "credits": "someoneice",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
