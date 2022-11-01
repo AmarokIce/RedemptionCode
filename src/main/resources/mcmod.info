@@ -1,14 +1,14 @@
 [
 {
-  "modid": "omo",
-  "name": "omo",
-  "description": "omo.",
+  "modid": "lottery",
+  "name": "lottery",
+  "description": "lottery.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Someoneice"],
-  "credits": "A TPA MOD.",
+  "credits": ".",
   "logoFile": "",
   "screenshots": [],
   "dependencies": ["required-after:forgelin"]
