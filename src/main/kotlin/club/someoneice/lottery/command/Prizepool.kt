@@ -23,8 +23,9 @@ class Prizepool: CommandBase() {
         val player: EntityPlayerMP = getPlayer(sender, sender.commandSenderName)
         val code: String = if (list.size >= 2) list[1]
         else Util.getRandomCode(7)
-        DataSet.gift.put(list[0], LotteryData(list[0], code, HashMap<Int, ItemList>(), ArrayList<String>()))
+        DataSet.gift.put(code, LotteryData(list[0], code, HashMap<Int, ItemList>(), ArrayList<String>()))
         DataSet.gift[list[0]]!!.ItemList = DataSet.itemList.clone() as HashMap<Int, ItemList>
+        DataSet.codeList.add(code)
 
         player.addChatMessage(ChatComponentTranslation("你创建了礼包： ${list[0]}, 兑换码: $code"))
 

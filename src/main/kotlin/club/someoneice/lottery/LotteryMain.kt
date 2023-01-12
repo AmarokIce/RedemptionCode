@@ -1,11 +1,7 @@
 package club.someoneice.lottery
 
-import club.someoneice.lottery.command.Cash
-import club.someoneice.lottery.command.Pool
-import club.someoneice.lottery.command.Prize
-import club.someoneice.lottery.command.Prizepool
+import club.someoneice.lottery.command.*
 import club.someoneice.lottery.json.JsonReader
-import club.someoneice.lottery.json.JsonSandman
 import club.someoneice.lottery.json.JsonWriter
 import cpw.mods.fml.common.Mod
 import cpw.mods.fml.common.Mod.EventHandler
@@ -39,12 +35,13 @@ class LotteryMain {
 
     @EventHandler
     fun serverStarting(event: FMLServerStartingEvent) {
-        JsonReader.reader()
+        JsonReader.reader(false)
 
         event.registerServerCommand(Prize())
         event.registerServerCommand(Prizepool())
         event.registerServerCommand(Cash())
         event.registerServerCommand(Pool())
+        event.registerServerCommand(Rc())
     }
 
     @EventHandler

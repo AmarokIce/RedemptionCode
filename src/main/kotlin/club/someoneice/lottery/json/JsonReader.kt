@@ -1,6 +1,5 @@
 package club.someoneice.lottery.json
 
-import club.someoneice.lottery.LotteryMain
 import club.someoneice.lottery.LotteryMain.Companion.log
 import club.someoneice.lottery.data.DataSet
 import club.someoneice.lottery.data.inner.LotteryData
@@ -9,13 +8,13 @@ import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
-import java.util.*
 
 object JsonReader {
-    val gson = Gson()
-    val getType = object : TypeToken<List<LotteryData>>() {}.type
-    val file = File(System.getProperty("user.dir") + "\\lottery\\lottery.json")
-    fun reader() {
+    private val gson = Gson()
+    private val getType = object : TypeToken<List<LotteryData>>() {}.type
+    private val file = File(System.getProperty("user.dir") + "\\lottery\\lottery.json")
+    fun reader(isHot: Boolean) {
+        if (!file.isDirectory && !file.exists()) return
         val text = StringBuffer()
         val buffreader = BufferedReader(FileReader(file))
 
@@ -26,12 +25,17 @@ object JsonReader {
             }
             buffreader.close()
             val output: String = text.toString()
-            LotteryMain.log.info(output)
+            log.info(output)
             val list: List<LotteryData> = gson.fromJson(output, getType)
-            for (i in 0 .. list.size) {
-                if (i == list.size) return
-                val getList: LotteryData = list[i]
-                DataSet.gift.put(getList.name, getList)
+            for (i in list) {
+                if (!isHot) DataSet.gift.put(i.code, i)
+                else {
+                    if (DataSet.gift.containsKey(i.code)) {
+                        i.player = DataSet.gift[i.code]!!.player
+                    }
+                    
+                    DataSet.gift.put(i.code, i)
+                }
             }
 
         } catch (_: Exception) {

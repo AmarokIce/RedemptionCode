@@ -8,4 +8,6 @@ object DataSet {
     val itemList: HashMap<Int, ItemList> = HashMap<Int, ItemList>()
 
     var gift: HashMap<String, LotteryData> = HashMap<String, LotteryData>()
+
+    var codeList: ArrayList<String> = ArrayList<String>()
 }
