@@ -1,4 +1,4 @@
-package club.someoneice.lottery.helper
+package club.someoneice.lottery
 
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
@@ -8,7 +8,6 @@ import java.awt.datatransfer.Clipboard
 import java.awt.datatransfer.StringSelection
 import java.awt.datatransfer.Transferable
 import java.util.*
-
 
 object Util {
     fun getRandomCode(size: Int): String {

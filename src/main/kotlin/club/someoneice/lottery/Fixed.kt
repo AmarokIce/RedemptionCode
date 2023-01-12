@@ -1,6 +1,4 @@
-package club.someoneice.lottery.helper
-
-import club.someoneice.lottery.data.DataSet
+package club.someoneice.lottery
 
 object Fixed {
 

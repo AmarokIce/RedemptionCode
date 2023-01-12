@@ -18,6 +18,7 @@ object CommandRegistry {
         cmd.PRIZEPOOL(event)
         cmd.CASH(event)
         cmd.POOL(event)
+        cmd.RC(event)
     }
 
     @SubscribeEvent

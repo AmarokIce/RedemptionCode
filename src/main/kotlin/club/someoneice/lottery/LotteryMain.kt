@@ -1,8 +1,6 @@
 package club.someoneice.lottery
 
 import club.someoneice.lottery.command.CommandRegistry
-import club.someoneice.lottery.json.JsonReader
-import club.someoneice.lottery.json.JsonWriter
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.server.ServerAboutToStartEvent
 import net.minecraftforge.event.server.ServerStoppingEvent
@@ -25,14 +23,14 @@ object LotteryMain {
 
     private fun onServerAboutToStart(event: ServerAboutToStartEvent) {
         LOGGER.log(Level.INFO, "Server starting...")
-        JsonReader.reader()
+        JsonHelper.reader()
 
         MinecraftForge.EVENT_BUS.register(CommandRegistry)
     }
 
     private fun onServerStopping(event: ServerStoppingEvent) {
         LOGGER.log(Level.INFO, "Server stopping...")
-        JsonWriter.writer()
+        JsonHelper.writer()
 
     }
 }
