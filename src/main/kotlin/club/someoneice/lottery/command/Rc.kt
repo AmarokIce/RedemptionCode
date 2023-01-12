@@ -1,7 +1,6 @@
 package club.someoneice.lottery.command
 
-import club.someoneice.lottery.json.JsonReader
-import club.someoneice.lottery.json.JsonWriter
+import club.someoneice.lottery.JsonHelper
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
 import net.minecraft.util.ChatComponentTranslation
@@ -17,10 +16,10 @@ class Rc: CommandBase() {
 
     override fun processCommand(sender: ICommandSender, list: Array<String>) {
         if (list[0] == "load") {
-            JsonReader.reader(true)
+            JsonHelper.reader(true)
             sender.addChatMessage(ChatComponentTranslation("Done!"))
         } else if (list[0] == "write") {
-            JsonWriter.writer()
+            JsonHelper.writer()
             sender.addChatMessage(ChatComponentTranslation("Done!"))
         } else sender.addChatMessage(ChatComponentTranslation("/rc load / write"))
     }

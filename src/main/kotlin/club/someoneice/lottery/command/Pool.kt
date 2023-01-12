@@ -1,6 +1,6 @@
 package club.someoneice.lottery.command
 
-import club.someoneice.lottery.data.DataSet
+import club.someoneice.lottery.DataSet
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
 import net.minecraft.util.ChatComponentTranslation

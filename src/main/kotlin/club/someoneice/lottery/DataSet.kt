@@ -1,7 +1,7 @@
-package club.someoneice.lottery.data
+package club.someoneice.lottery
 
-import club.someoneice.lottery.data.inner.ItemList
-import club.someoneice.lottery.data.inner.LotteryData
+import club.someoneice.lottery.data.ItemList
+import club.someoneice.lottery.data.LotteryData
 import java.util.*
 
 object DataSet {

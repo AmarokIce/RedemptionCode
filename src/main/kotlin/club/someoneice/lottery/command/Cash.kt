@@ -1,7 +1,7 @@
 package club.someoneice.lottery.command
 
-import club.someoneice.lottery.data.DataSet
-import club.someoneice.lottery.helper.Util
+import club.someoneice.lottery.DataSet
+import club.someoneice.lottery.Util
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
 import net.minecraft.entity.player.EntityPlayerMP

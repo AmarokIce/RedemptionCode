@@ -1,4 +1,4 @@
-package club.someoneice.lottery.data.inner
+package club.someoneice.lottery.data
 
 data class ItemList(
     val itemName: Int,

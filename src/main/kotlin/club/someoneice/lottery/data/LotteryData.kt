@@ -1,4 +1,4 @@
-package club.someoneice.lottery.data.inner
+package club.someoneice.lottery.data
 
 import java.util.*
 
